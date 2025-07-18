@@ -7,7 +7,6 @@
 }
 
 body {
-  overflow: hidden;
   font-family: 'Readex Pro', sans-serif;
   color: var(--dark-blue);
   background: radial-gradient(circle, #00A7E1 0%, #00A7E120 60%, #ffffff 100%);

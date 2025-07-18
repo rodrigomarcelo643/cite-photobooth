@@ -17,11 +17,11 @@ function WelcomeScreen() {
         <img src="/cite_logo.svg" alt="SWU Logo" className="logo" />
         <p className="subtitle">Welcome to the</p>
         <h1 className="cite">
-          <span>CITE</span> photobooth
+          <span>Trojan's</span> photobooth
         </h1>
-        <p className="tagline">Make your first memories <br /> as a freshman at SWU PHINMA unforgettable.</p>
+        <p className="tagline">Make your first memories <br /> as a freshman with IT Student Council unforgettable.</p>
         <Link to="/camera">
-          <button className="start-btn">START →</button>
+          <button className="start-btn"><span>START →</span></button>
         </Link>
       </div>
     </div>
