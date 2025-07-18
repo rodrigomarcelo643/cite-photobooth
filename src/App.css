@@ -1,0 +1,14 @@
+/* Color Palette */
+:root {
+  --dark-blue: #003A5D;
+  --light-gray: #C6C6C6;
+  --light-blue: #00A7E1;
+  --white: #fff;
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Readex Pro', sans-serif;
+  color: var(--dark-blue);
+  background: radial-gradient(circle, #00A7E1 0%, #00A7E120 60%, #ffffff 100%);
+}
