@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomeScreen />} /> 
           <Route path="/camera" element={<Camera />} />
-          <Route path="/done" element={<Result />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
         <ToastContainer />
       </div>

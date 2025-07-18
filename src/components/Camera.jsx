@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import html2canvas from 'html2canvas';
+import PhotoStrip from './PhotoStrip';
+import { createRoot } from 'react-dom/client';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom'; // make sure you're using React Router
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './C.css';
 
 function Camera() {
@@ -9,6 +13,8 @@ function Camera() {
   const [timer, setTimer] = useState(0);
   const [isCapturing, setIsCapturing] = useState(false);
   const [captureDelay, setCaptureDelay] = useState(3);
+  const [isUploading, setIsUploading] = useState(false);
+  const [dotCount, setDotCount] = useState(0);
 
   const navigate = useNavigate();
 
@@ -89,17 +95,64 @@ function Camera() {
     });
   }
 };
+ 
+const handleDone = async () => {
+  setIsUploading(true);
 
+  const container = document.getElementById('hidden-photo-frame');
 
-  const handleDone = () => {
-    navigate('/done');
-  };
+  const canvas = await html2canvas(container, {
+    useCORS: true,
+    backgroundColor: null,
+    scale: 4,
+  });
+
+  const finalImage = canvas.toDataURL('image/png');
+
+  const formData = new FormData();
+  formData.append('file', finalImage);
+  formData.append('upload_preset', 'cite-photobooth');
+
+  try {
+    const res = await axios.post(
+      'https://api.cloudinary.com/v1_1/df3nxocat/image/upload',
+      formData
+    );
+
+    const imageUrl = res.data.secure_url.replace('/upload/', '/upload/fl_attachment:photostrip/');
+    navigate('/result', { state: { imageUrl } });
+  } catch (err) {
+    console.error('Cloudinary Upload Failed', err.response?.data || err.message);
+  } finally {
+    setIsUploading(false);
+  }
+};
 
   useEffect(() => {
     startVideoStream();
   }, []);
 
+  useEffect(() => {
+  if (isUploading) {
+    const interval = setInterval(() => {
+      setDotCount(prev => (prev + 1) % 4); // cycle from 0 to 3
+    }, 500);
+    return () => clearInterval(interval);
+  } else {
+    setDotCount(0);
+  }
+}, [isUploading]);
+
   return (
+    <>
+    {isUploading && (
+      <div className="loader-overlay">
+        <div className="loader-content">
+          <img src="/cite_logo.svg" alt="Loading..." className="floating-logo" />
+          <h5 className="loading-text">Loading{'.'.repeat(dotCount)}</h5>
+        </div>
+      </div>
+    )}
     <div className="container">
       <br />
       <header>
@@ -129,6 +182,8 @@ function Camera() {
             </div>
           )}
         </div>
+        <div className="preview-content">
+        {/* Individual photos visible on the right */}
         <div id="photos" className="photos">
           {photos.map((photo) => (
             <div key={photo.id} className="photo">
@@ -136,6 +191,12 @@ function Camera() {
             </div>
           ))}
         </div>
+
+        {/* Hidden PhotoStrip frame for upload purposes */}
+        <div id="hidden-photo-frame">
+          <PhotoStrip photos={photos} />
+        </div>
+      </div>
       </div>
 
       <center>
@@ -146,8 +207,8 @@ function Camera() {
             disabled={isCapturing}
           >
             <span className="btn-content">
-              Capture
               <span className="material-symbols-rounded">photo_camera</span>
+              Capture
             </span>
           </button>
         )}
@@ -164,6 +225,7 @@ function Camera() {
         )}
       </center>
     </div>
+    </>
   );
 }
 

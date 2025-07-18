@@ -1,27 +1,43 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import { QRCode } from 'react-qrcode-logo';
+import { useLocation, useNavigate } from 'react-router-dom';
+import QRCode from 'react-qr-code';
+import './R.css';
 
-const Result = () => {
-  const navigate = useNavigate(); 
+function Result() {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const imageUrl = state?.imageUrl;
 
-  const downloadImages = () => {
-    // Logic to trigger image download
-    // Example: could open a new window or trigger a download programmatically
-  };
+  if (!imageUrl) {
+    return <div>Error: No image URL provided.</div>;
+  }
 
   return (
     <div className="result-container">
-      <h1>Freshie Fair 2025</h1>
-      <div className="result-images">
-        <img src="image_placeholder_1.jpg" alt="Image 1" />
-        <img src="image_placeholder_2.jpg" alt="Image 2" />
-        <img src="image_placeholder_3.jpg" alt="Image 3" />
+      <div className="left-panel">
+        <img src={imageUrl} alt="Photostrip" className="photostrip-image" />
+        <button className="home-btn" onClick={() => navigate('/')}>
+          <span className="btn-content">
+            <span className="material-symbols-rounded">home</span>
+            <span>Back to Home</span>
+          </span>
+        </button>
       </div>
-      <QRCode value="https://link_to_download_images" size={128} />
-      <button onClick={downloadImages}>Download</button>
+
+      <div className="right-panel">
+        <h2 className="scan-text">Scan the QR Code to download</h2>
+        <hr className='line'/>
+        <QRCode value={imageUrl} size={250} />
+        <div className="logo-section">
+          <img src="/cite_logo.svg" alt="Logo" className="logo-img" />
+          <div>
+            <h3 className='org-text'>COLLEGE OF INFORMATION TECHNOLOGY</h3>
+            <h4 className='text'>STUDENT BODY ORGANIZATION</h4>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Result;
