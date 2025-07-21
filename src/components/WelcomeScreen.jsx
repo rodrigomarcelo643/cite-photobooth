@@ -19,7 +19,7 @@ function WelcomeScreen() {
         <h1 className="cite">
           <span>Trojan's</span> photobooth
         </h1>
-        <p className="tagline">Make your first memories <br /> as a freshman with IT Student Council unforgettable.</p>
+        <p className="tagline">Make your first memories <br/> as a freshman unforgettable with the IT Student Council.</p>
         <Link to="/camera">
           <button className="start-btn"><span>START →</span></button>
         </Link>

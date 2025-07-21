@@ -3,7 +3,9 @@ import './PS.css';
 
 function PhotoStrip({ photos }) {
   return (
+    <>
     <div className="frame-container">
+      <div class="particles-static"></div>
       <div className="frame">
         {Array.from({ length: 3 }).map((_, index) => (
           <div key={index} className="photo-slot">
@@ -24,6 +26,7 @@ function PhotoStrip({ photos }) {
         <img src="/cite_logo.svg" alt="CITE Logo" />
       </div>
     </div>
+    </>
   );
 }
 
