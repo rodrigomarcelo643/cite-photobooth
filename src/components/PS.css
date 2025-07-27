@@ -1,23 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .frame-container {
   position: relative;
   overflow: hidden;
   width: 300px;
-  background-color: #003049;
-  border: 10px solid #003049;
-  padding: 10px;
+  background-color: #00A7E1;
+  padding-top: 100px;
+  padding-bottom: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: white;
   text-align: center;
 }
 
 .frame {
-  padding: 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .photo-slot {
   width: 100%;
+  min-height: 225px;
   aspect-ratio: 16 / 9;
   background-color: #ddd;
   display: flex;
@@ -26,46 +31,99 @@
   overflow: hidden;
 }
 
+.photo-slot.photo-0 {
+  border-radius: 500px 500px 25px 25px;
+}
+
+.photo-slot.photo-1 {
+  border-radius: 25px;
+}
+
+.photo-slot.photo-2 {
+  border-radius: 20px 20px 500px 500px;
+}
+
 .photo-slot img {
   width: 100%;
   object-fit: cover;
 }
 
-.footer {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+.freshie-title {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pacifico';
+  font-size: 22px;
+  font-weight: bolder;
+  color: #fff;
+  margin: 0;
+  text-shadow: 5px 3px #003A5D;
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
-.footer img{
-  width: 50px;
-  height: 50px;
+.freshie{
+  position: absolute;
+  font-size: 40px;
+  top: 10px;
+  left: -20px;
 }
 
-.footer section h2{
-  font-family: 'Readex Pro', sans-serif;
-  font-size: 17px;
-  margin-bottom: 0;
+.fair{
+  font-size: 75px;
 }
 
-.footer section p{
-  margin-top: 0;
+.year{
+  position: absolute;
+  font-size: 40px;
+  top: 120px;
 }
 
-.particles-static {
+.warning-1{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+}
+
+.warning-2{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+}
+
+.warning-1{ top: 180px; left: -15px; transform: rotate(-20deg); }
+.warning-2{ top: 400px; right: -15px; transform: rotate(-20deg); }
+
+.cat-1{
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg-pattern {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(white 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
-  opacity: 0.1;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
 }
+
+.bg-pattern .line {
+  position: absolute;
+  width: 150%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+}
+
+.bg-pattern .line1 { top: 90px; left: -10%; }
+.bg-pattern .line2 { top: 190px; left: -15%; }
+
+.bg-pattern .line3 { bottom: 100px; left: -15%; }
+.bg-pattern .line4 { bottom: -10px; left: -15%; }

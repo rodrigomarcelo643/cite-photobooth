@@ -142,8 +142,8 @@
 
 #hidden-photo-frame {
   position: absolute;
-  top: -9999px;
-  left: -9999px;
+  top: 50px;
+  left: 50px;
 }
 
 .capture-btn .btn-content {
