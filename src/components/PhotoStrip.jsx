@@ -4,6 +4,8 @@ import './PS.css';
 function PhotoStrip({ photos }) {
   return (
     <div className="frame-container">
+      <img src="/cloud.svg" alt="CITE Logo" className='sticker-1' />
+      <img src="/terminal.svg" alt="CITE Logo" className='sticker-2' />
       <div class="bg-pattern">
         <div class="line line1"></div>
         <div class="line line2"></div>
@@ -29,6 +31,8 @@ function PhotoStrip({ photos }) {
         <img src="/rbt.svg" alt="CITE Logo" className='warning-2' />
       </div>
       <img src="/cite_logo.svg" alt="CITE Logo" className='cat-1' />
+      <img src="/java.svg" alt="CITE Logo" className='sticker-3' />
+      <img src="/web.svg" alt="CITE Logo" className='sticker-4' />
     </div>
   );
 }

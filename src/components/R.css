@@ -1,6 +1,7 @@
 .result-container {
   display: flex;
-  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   gap: 100px;
 }
@@ -14,7 +15,7 @@
 }
 
 .photostrip-image {
-  width: 175px;
+  width: 250px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
@@ -22,12 +23,12 @@
   margin-top: 20px;
   position: relative;
   overflow: hidden;
-  padding: 8px 22px;
+  padding: 12px 30px;
   background-color: #003049;
   color: white;
   border: #003049 solid 2px;
   border-radius: 25px;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 600;
   cursor: pointer;
   font-family: 'Readex Pro', sans-serif;

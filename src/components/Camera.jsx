@@ -144,7 +144,7 @@ const handleDone = async () => {
 }, [isUploading]);
 
   return (
-    <>
+    <div className="wrapper">
     {isUploading && (
       <div className="loader-overlay">
         <div className="loader-content">
@@ -225,7 +225,7 @@ const handleDone = async () => {
         )}
       </center>
     </div>
-    </>
+    </div>
   );
 }
 
