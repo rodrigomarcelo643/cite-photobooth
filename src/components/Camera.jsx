@@ -59,6 +59,13 @@ function Camera() {
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
+    // Flip horizontally to undo mirrored webcam preview
+    context.save();
+    context.translate(canvas.width, 0);
+    context.scale(-1, 1);
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    context.restore();
+
     const dataURL = canvas.toDataURL('image/png');
 
     setPhotos((prevPhotos) => [

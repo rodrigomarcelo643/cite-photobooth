@@ -92,6 +92,7 @@
 .cam-preview{
     width: 600px;
     height: 340px;
+    transform: scaleX(-1);
     border: 5px solid #003049;
     border-radius: 12px;
     object-fit: cover;
@@ -150,8 +151,8 @@
 
 #hidden-photo-frame {
   position: absolute;
-  top: -9999px;
-  left: -9999px;
+  top: 50px;
+  left: 50px;
 }
 
 .capture-btn .btn-content {
