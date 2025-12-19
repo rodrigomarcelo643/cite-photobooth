@@ -71,20 +71,20 @@
 }
 
 .controls-top{
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; */
 }
 
 .controls-top h4{
-  color: #fff;
+  /* color: #fff; */
 }
 
 .controls-top select{
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  border: 2px solid #003049;
+  border: 2px solid #FFBB5F;
   padding: 8px 12px;
   border-radius: 100px;
 }
@@ -93,7 +93,7 @@
     width: 600px;
     height: 340px;
     transform: scaleX(-1);
-    border: 5px solid #003049;
+    border: 5px solid #FFBB5F;
     border-radius: 12px;
     object-fit: cover;
 }
@@ -144,7 +144,7 @@
 .photo img {
   width: 150px;
   height: 110px;
-  border: 2px solid #003049;
+  border: 2px solid #FFBB5F;
   border-radius: 12px;
   animation: instaxDrop 1.8s ease-out;
 }
@@ -165,7 +165,7 @@
 .capture-btn {
   margin-top: 10px;
   padding: 12px 28px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: white;
   border: none;
   border-radius: 25px;
@@ -178,9 +178,9 @@
 
 .capture-btn:hover {
   background-color: #fff;
-  color: #003049;
+  color: #FFBB5F;
   font-weight: 600;
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
 }
 
 .done-retake-group {
@@ -193,7 +193,7 @@
 .retake-btn {
   padding: 12px 28px;
   background-color: #fff;
-  color: #003049;
+  color: #FFBB5F;
   border: none;
   border-radius: 25px;
   font-size: 16px;
@@ -201,11 +201,11 @@
   cursor: pointer;
   transition: background 0.3s ease;
   font-family: 'Readex Pro', sans-serif;
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
 }
 
 .retake-btn:hover {
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: #fff;
   font-weight: 600;
 }
@@ -214,9 +214,9 @@
   position: relative;
   overflow: hidden;
   padding: 12px 28px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: white;
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
   border-radius: 25px;
   font-size: 16px;
   font-weight: 600;
@@ -250,11 +250,11 @@
 }
 
 .done-btn:hover span {
-  color: #003049;
+  color: #FFBB5F;
 }
 
 .done-btn:hover {
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
 }
 
 @media (max-width: 768px) {
@@ -291,7 +291,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 48, 73, 0.6);
+  background-color: rgba(255, 187, 95, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -321,7 +321,7 @@
 .loading-text {
   margin-top: 20px;
   font-size: 20px;
-  color: #003049;
+  color: #FFBB5F;
   font-family: 'Readex Pro', sans-serif;
   transition: all 0.3s ease-in-out;
 }

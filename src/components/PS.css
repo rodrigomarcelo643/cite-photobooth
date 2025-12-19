@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .frame-container {
-  position: relative;
+  /* position: relative;
   overflow: hidden;
   width: 300px;
   background-color: #00A7E1;
@@ -10,19 +10,20 @@
   padding-left: 40px;
   padding-right: 40px;
   color: white;
-  text-align: center;
+  text-align: center; */
 }
 
 .frame {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .photo-slot {
   width: 100%;
-  min-height: 225px;
+  min-height: 175px;
+
   aspect-ratio: 16 / 9;
   background-color: #ddd;
   display: flex;
@@ -31,7 +32,7 @@
   overflow: hidden;
 }
 
-.photo-slot.photo-0 {
+/* .photo-slot.photo-0 {
   border-radius: 25px;
 }
 
@@ -41,7 +42,7 @@
 
 .photo-slot.photo-2 {
   border-radius: 25px;
-}
+} */
 
 .photo-slot img {
   width: 100%;

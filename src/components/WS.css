@@ -32,10 +32,6 @@ body{
   width: 100%;
 }
 
-.logo {
-  width: 80px;
-  margin-bottom: 10px;
-}
 
 .subtitle {
   font-size: 20px;
@@ -68,7 +64,7 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: 12px 28px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: white;
   border: none;
   border-radius: 25px;
@@ -84,7 +80,7 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: 12px 28px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: white;
   border: none;
   border-radius: 25px;
@@ -120,16 +116,16 @@ h1 {
 }
 
 .start-btn:hover span {
-  color: #003049;
+  color: #FFBB5F;
 }
 
 .start-btn:hover {
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
 }
 
 .icon {
   position: absolute;
-  width: 80px;
+  /* width: 80px; */
   animation: sway 3s ease-in-out infinite;
 }
 
@@ -170,7 +166,7 @@ h1 {
   }
 
   .icon {
-    width: 100px;
+    /* width: 100px; */
   }
 
   /* Adjust icon positioning slightly for more spacing on big screens */

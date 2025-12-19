@@ -24,9 +24,9 @@
   position: relative;
   overflow: hidden;
   padding: 12px 30px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   color: white;
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
   border-radius: 25px;
   font-size: 20px;
   font-weight: 600;
@@ -60,11 +60,11 @@
 }
 
 .home-btn:hover span {
-  color: #003049;
+  color: #FFBB5F;
 }
 
 .home-btn:hover {
-  border: #003049 solid 2px;
+  border: #FFBB5F solid 2px;
 }
 
 .right-panel {
@@ -76,14 +76,14 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 32px;
-  color: #003049;
+  color: #FFBB5F;
 }
 
 .line{
   margin-top: 0px;
   margin-bottom: 20px;
   height: 2px;
-  background-color: #003049;
+  background-color: #FFBB5F;
   border: 0;
 }
 
@@ -102,7 +102,7 @@
 .org-text{
   font-family: 'Inter';
   margin-bottom: 0;
-  color: #003049;
+  color: #FFBB5F;
 }
 
 .text{
