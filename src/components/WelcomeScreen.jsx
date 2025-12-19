@@ -30,7 +30,6 @@ function WelcomeScreen() {
       <img src="/pet-elements/element-4.svg" className="icon absolute left-20 top-10" alt="icon" />
       <img src="/pet-elements/element-5.svg" className="icon absolute left-40 bottom-20" alt="icon" />
 
-
       <div className="flex flex-col justify-center items-center text-center">
         <div className="flex flex-row items-center justify-center mb-4 gap-x-2">
           <img src="/logos/mlob_logo.png" height={55} width={55} alt="MLOB Logo" className=" rounded-full" />
