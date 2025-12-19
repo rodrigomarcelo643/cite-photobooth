@@ -256,13 +256,13 @@ const handleDone = async () => {
         </div>
       
         <div className="flex flex-row items-center justify-center mb-4 gap-x-2">
-          <img src="/public/logos/mlob_logo.png" height={55} width={55} alt="MLOB Logo" className=" rounded-full" />
-          <img src="/public/logos/official_seal_of_cebu_city_small.png" height={55} width={55} alt="Cebu City Logo" className=" rounded-full" />
-          <img src="/public/logos/dvmf_logo.jpg" height={55} width={55} alt="DVMF Logo" className=" rounded-full" />
-          <img src="/public/logos/sambag_1_logo.jpg" height={55} width={55} alt="Sambag 1 Logo" className=" rounded-full" />
-          <img src="/public/logos/sambag_2_logo.png" height={55} width={55} alt="Sambag 2 Logo" className=" rounded-full" />
-          <img src="/public/logos/saver_logo.png" height={65} width={65} alt="Saver Logo" className=" rounded-full" />
-          <img src="/public/logos/pawtopia_logo.png" height={55} width={55} alt="Pawtopia Logo" className="" />
+          <img src="/logos/mlob_logo.png" height={55} width={55} alt="MLOB Logo" className=" rounded-full" />
+          <img src="/logos/official_seal_of_cebu_city_small.png" height={55} width={55} alt="Cebu City Logo" className=" rounded-full" />
+          <img src="/logos/dvmf_logo.jpg" height={55} width={55} alt="DVMF Logo" className=" rounded-full" />
+          <img src="/logos/sambag_1_logo.jpg" height={55} width={55} alt="Sambag 1 Logo" className=" rounded-full" />
+          <img src="/logos/sambag_2_logo.png" height={55} width={55} alt="Sambag 2 Logo" className=" rounded-full" />
+          <img src="/logos/saver_logo.png" height={65} width={65} alt="Saver Logo" className=" rounded-full" />
+          <img src="/logos/pawtopia_logo.png" height={55} width={55} alt="Pawtopia Logo" className="" />
           <img src="/cite_logo.svg" height={65} width={65} alt="SWU Logo" className="" />
         </div>
     </div>
