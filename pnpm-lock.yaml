@@ -32,9 +32,6 @@ importers:
       react:
         specifier: ^19.1.0
         version: 19.2.4
-      react-cloud-animation:
-        specifier: ^0.0.5
-        version: 0.0.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react-clouds:
         specifier: ^1.0.0
         version: 1.0.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1420,11 +1417,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.344.0:
-    resolution: {integrity: sha512-6YyBnn91GB45VuVT96bYCOKElbJzUHqp65vX8cDcu55MQL9T969v4dhGClpljamuI/+KMO9P6w9Acq1CVQGvIQ==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0
-
   maath@0.10.8:
     resolution: {integrity: sha512-tRvbDF0Pgqz+9XUa4jjfgAQ8/aPKmQdWXilFu2tMy4GWj4NOsx99HlULO4IeREfbO3a0sA145DZYyvXPkybm0g==}
     peerDependencies:
@@ -1538,12 +1530,6 @@ packages:
 
   qrcode-generator@1.5.2:
     resolution: {integrity: sha512-pItrW0Z9HnDBnFmgiNrY1uxRdri32Uh9EjNYLPVC2zZ3ZRIIEqBoDgm4DkvDwNNDHTK7FNkmr8zAa77BYc9xNw==}
-
-  react-cloud-animation@0.0.5:
-    resolution: {integrity: sha512-Rf6J5uuNC9WLWP8WQcEqjx5mv1QBM4OLl5VRiTmZiaM1gWcIYeCDw5+ASi2mErEmw1dTJpjQy7QpGDnqsx1+CA==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
 
   react-clouds@1.0.0:
     resolution: {integrity: sha512-OA2hOZ7FdCiNRf6BQklwcJoz3ZbHMLoJJuzmXbI+qswUmlbvKlOI7CiONA8ZZtBm5CcC4+M5qmrpVb+U2bYYpA==}
@@ -3095,10 +3081,6 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.344.0(react@19.2.4):
-    dependencies:
-      react: 19.2.4
-
   maath@0.10.8(@types/three@0.183.1)(three@0.183.2):
     dependencies:
       '@types/three': 0.183.1
@@ -3195,12 +3177,6 @@ snapshots:
   qr.js@0.0.0: {}
 
   qrcode-generator@1.5.2: {}
-
-  react-cloud-animation@0.0.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
-    dependencies:
-      lucide-react: 0.344.0(react@19.2.4)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
 
   react-clouds@1.0.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
