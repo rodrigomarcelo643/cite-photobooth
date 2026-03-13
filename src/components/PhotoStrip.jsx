@@ -3,16 +3,15 @@ import './PS.css';
 
 function PhotoStrip({ photos }) {
   return (
-    <div className="frame-container w-[300px] bg-[#FFBB5F] p-4 overflow-hidden relative ">
-      
-      {/* <h2 className='freshie-title'>
-        <span className="freshie">Freshie</span> <br/>
-        <span className="fair">Fair</span> <br/>
-        <span className="year">2025</span>
-      </h2> */}
-      <div className="frame">
+    <div
+      className="frame-container w-[300px] overflow-hidden relative"
+      style={{ background: 'linear-gradient(180deg, #ec6a40 0%, #f58e64 55%, #feb994 100%)' }}
+    >
+
+      {/* Photo slots */}
+      <div className="frame p-4">
         {Array.from({ length: 3 }).map((_, index) => (
-          <div key={index} className={`photo-slot photo-${index}`}>
+          <div key={index} className={`photo-slot photo-${index} rounded-xl overflow-hidden`}>
             {photos[index] ? (
               <img src={photos[index].src} alt={`Photo ${index + 1}`} />
             ) : (
@@ -20,24 +19,48 @@ function PhotoStrip({ photos }) {
             )}
           </div>
         ))}
-
       </div>
-      <img src="/logos/merry_xmas.png" alt="MLOB Logo" className='mt-8 scale-90' />
-      <img src="/pet-elements/element-1.svg" height={120} width={120} alt="Cat Element" className='absolute top-35 right-[-25px] ' />
-      <img src="/pet-elements/element-3.svg" height={120} width={120} alt="Cat Element" className='absolute top-80 left-[-15px] transform scale-x-[-1]' />
-      <img src="/pet-elements/element-2.svg" height={120} width={120} alt="Cat Element" className='absolute top-125 right-[-25px] transform -rotate-20 scale-x-[-1]' />
-      <div className="flex flex-row items-center justify-center gap-x-2 scale-55">
-          <img src="/logos/mlob_logo.png" height={55} width={55} alt="Cebu City Logo" className=" rounded-full" />
-          <img src="/logos/official_seal_of_cebu_city_small.png" height={55} width={55} alt="Cebu City Logo" className=" rounded-full" />
-          <img src="/logos/dvmf_logo.jpg" height={55} width={55} alt="DVMF Logo" className=" rounded-full" />
-          <img src="/logos/sambag_1_logo.jpg" height={55} width={55} alt="Sambag 1 Logo" className=" rounded-full" />
-          <img src="/logos/sambag_2_logo.png" height={55} width={55} alt="Sambag 2 Logo" className=" rounded-full" />
-          <img src="/logos/saver_logo.png" height={65} width={65} alt="Saver Logo" className=" rounded-full" />
-          <img src="/logos/pawtopia_logo.png" height={55} width={55} alt="Pawtopia Logo" className="" />
-          <img src="/cite_logo.svg" height={65} width={65} alt="SWU Logo" className="" />
+
+      {/* Panpan side decorators */}
+      <img
+        src="/awscc/panpan1.png"
+        width={90} height={90}
+        alt="Panpan"
+        className="absolute top-36 right-[-5px]"
+      />
+      <img
+        src="/awscc/panpan3.png"
+        width={90} height={90}
+        alt="Panpan"
+        className="absolute top-[330px] left-[-5px] scale-x-[-1]"
+        style={{ transform: 'scaleX(-1)' }}
+      />
+
+      <img
+        src="/awscc/panpan5.png"
+        width={90} height={90}
+        alt="Panpan"
+        className="absolute bottom-35 right-[-5px]"
+      />
+
+      {/* Bottom branding safe-zone */}
+      <div className="flex flex-col items-center justify-center gap-2 pb-4 px-4">
+         
+        <div className='flex flex-row items-center gap-3 justify-center'>
+          <img src="/awscc/awscc_cloud.png" width={100} height={100} alt="AWSCC"/>
+          <img
+          src="/awscc/it_summit_logo.png"
+          height={52}
+          width={100}
+          alt="IT Next Summit Logo"
+          className="ml-2 z-10"
+        />
         </div>
+        <img src="/awscc/swudevslogowhite.png" width={140} height={32} alt="SWUdevs" className="mt-2" />
+      </div>
     </div>
   );
 }
 
 export default PhotoStrip;
+

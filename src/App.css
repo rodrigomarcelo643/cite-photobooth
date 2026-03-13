@@ -1,17 +1,16 @@
 /* Color Palette */
 :root {
-  --dark-blue: #003A5D;
+  --dark-blue: #1a1a3e;
   --light-gray: #C6C6C6;
   --light-blue: #00A7E1;
   --white: #fff;
-  --orange: #FFBB5F;
-  --light-orange: #f6ce96;
-
+  --orange: #ec6a40;
+  --orange-mid: #f58e64;
+  --orange-pastel: #feb994;
 }
 
 body {
   font-family: 'Readex Pro', sans-serif;
   color: var(--dark-blue);
-  background-color: #EFF3F6;
-  /* background: radial-gradient(circle, #00A7E1 0%, #00A7E120 60%, #ffffff 100%); */
+  background-color: #FFF5F0;
 }

@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './C.css';
-import Snowfall from 'react-snowfall';
 
 function Camera() {
   const videoRef = useRef(null);
@@ -152,35 +151,40 @@ const handleDone = async () => {
 }, [isUploading]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden relative">
     {isUploading && (
       <div className="loader-overlay">
         <div className="loader-content">
-          <img src="/logos/mlob_logo.png" alt="Loading..." className="floating-logo rounded-full" />
+          <img src="/awscc/awscclogo.png" alt="Loading..." className="floating-logo rounded-full" />
           <h5 className="loading-text">Loading{'.'.repeat(dotCount)}</h5>
         </div>
       </div>
     )}
-    <Snowfall 
-            color="	#c6fbff"
-            snowflakeCount={200}
-            style={{
-              position: 'fixed',
-              width: '100vw',
-              height: '100vh',
-              zIndex: 100,
-            }}
-          />
-    <div className="container">
+      {/* Cloud decorations */}
+      <img src="/awscc/awscc_cloud.png" alt="" className="absolute top-4 left-6 w-44 opacity-40 pointer-events-none" />
+      <img src="/awscc/awscc_cloud.png" alt="" className="absolute top-2 right-16 w-56 opacity-30 pointer-events-none" />
+      <img src="/awscc/awscc_cloud.png" alt="" className="absolute bottom-16 left-8 w-48 opacity-35 pointer-events-none" />
+      <img src="/awscc/awscc_cloud.png" alt="" className="absolute bottom-4 right-4 w-36 opacity-40 pointer-events-none" />
+    <div className="flex flex-col items-center justify-center">
       <br />
       {/* <header>
         <img src="/cite_logo.svg" alt="Logo" className="logo" />
         <h1>Trojan's photobooth</h1>
       </header> */}
-        <p className="text-6xl  text-center mt-6">
-          <span className='text-[#00336C] font-bold'>MERRY</span><span className='text-[#D2273A] font-bold'> CHRIST<span className='text-[#F5BE01] font-bold'>MAS</span></span><span className='text-[#00336C] font-bold'> PAWS</span> 
-        </p>
-        <p className="text-[#D2273A] text-2xl text-center mb-8">PHOTOBOOTH</p>
+        {/* <p className="text-5xl text-center mt-6">
+          <span className='text-[#ec6a40] font-black'>IT </span>
+          <span className='text-[#1a1a3e] font-black'>NEXT</span>
+          <span className='text-[#ec6a40] font-black'> SUMMIT</span>
+        </p> */}
+         <img
+          src="/awscc/it_summit_logo.png"
+          height={52}
+          width={200}
+          alt="IT Next Summit Logo"
+            className="block mx-auto mb-2"
+          style={{ filter: 'drop-shadow(0 10px 8px rgba(236, 106, 64, 0.35))' }}
+        />
+        <p className="text-[#f58e64] text-2xl text-center mb-8 font-bold tracking-[0.2em]">2026 · PHOTOBOOTH</p>
 
       <div className="preview-section">
         <div className="countdown">
@@ -195,7 +199,7 @@ const handleDone = async () => {
         {/* Individual photos visible on the right */}
         <div id="photos" className="photos">
           {photos.map((photo) => (
-            <div key={photo.id} className="photo">
+            <div key={photo.id} className="photo mb-1">
               <img src={photo.src} alt={`captured-${photo.id}`} />
             </div>
           ))}
@@ -218,6 +222,7 @@ const handleDone = async () => {
             disabled={isCapturing || photos.length >= 3}
             className="bg-white p-4 rounded-full cursor-pointer"
           >
+            <option value={1}>1 second</option>
             <option value={3}>3 seconds</option>
             <option value={5}>5 seconds</option>
             <option value={10}>10 seconds</option>
@@ -248,24 +253,14 @@ const handleDone = async () => {
         )}
       </center>
     </div>
-    <div className="flex flex-row items-center justify-between w-5/6">
-       <div className="flex items-end gap-2 justify-center text-center">
-          <p>Powered by</p>
-          <img src="/logos/pawtopia_logo.png" height={30} width={30} alt="SWU Logo" className="mx-auto mt-2" />
-          <p>Pawtopia</p>
-        </div>
-      
-        <div className="flex flex-row items-center justify-center mb-4 gap-x-2">
-          <img src="/logos/mlob_logo.png" height={55} width={55} alt="MLOB Logo" className=" rounded-full" />
-          <img src="/logos/official_seal_of_cebu_city_small.png" height={55} width={55} alt="Cebu City Logo" className=" rounded-full" />
-          <img src="/logos/dvmf_logo.jpg" height={55} width={55} alt="DVMF Logo" className=" rounded-full" />
-          <img src="/logos/sambag_1_logo.jpg" height={55} width={55} alt="Sambag 1 Logo" className=" rounded-full" />
-          <img src="/logos/sambag_2_logo.png" height={55} width={55} alt="Sambag 2 Logo" className=" rounded-full" />
-          <img src="/logos/saver_logo.png" height={65} width={65} alt="Saver Logo" className=" rounded-full" />
-          <img src="/logos/pawtopia_logo.png" height={55} width={55} alt="Pawtopia Logo" className="" />
-          <img src="/cite_logo.svg" height={65} width={65} alt="SWU Logo" className="" />
-        </div>
-    </div>
+    <div className="flex items-center gap-2 justify-center absolute bottom-8 text-center text-sm font-semibold z-10">
+        <p className="text-[#ec6a40]/80 inline-flex items-center gap-2 whitespace-nowrap">
+          <span>Powered by</span>
+          <img src="/awscc/swudevslogo.png" height={24} width={80} alt="SWUdevs"/>
+          <span>&</span>
+          <img src="/awscc/awscclogo.png" height={30} width={30} alt="AWSCC" className="rounded-full" />
+        </p>
+      </div>
    
     </div>
   );

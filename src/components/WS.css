@@ -64,28 +64,12 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: 12px 28px;
-  background-color: #FFBB5F;
+  background-color: #ec6a40;
   color: white;
   border: none;
   border-radius: 25px;
   font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.3s ease, border 0.3s ease;
-  font-family: 'Readex Pro', sans-serif;
-  z-index: 1;
-}
-
-.start-btn {
-  position: relative;
-  overflow: hidden;
-  padding: 12px 28px;
-  background-color: #FFBB5F;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   font-family: 'Readex Pro', sans-serif;
   z-index: 1;
@@ -116,11 +100,11 @@ h1 {
 }
 
 .start-btn:hover span {
-  color: #FFBB5F;
+  color: #ec6a40;
 }
 
 .start-btn:hover {
-  border: #FFBB5F solid 2px;
+  border: #ec6a40 solid 2px;
 }
 
 .icon {
