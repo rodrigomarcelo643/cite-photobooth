@@ -5,12 +5,6 @@ function WelcomeScreen() {
   return (
     <div className="flex flex-col items-center justify-center h-screen overflow-hidden relative">
 
-      {/* Cloud decorations */}
-      <img src="/awscc/awscc_cloud.png" alt="" className="absolute top-4 left-6 w-44 opacity-50 pointer-events-none" />
-      <img src="/awscc/awscc_cloud.png" alt="" className="absolute top-2 right-16 w-60 opacity-35 pointer-events-none" />
-      <img src="/awscc/awscc_cloud.png" alt="" className="absolute bottom-24 left-10 w-52 opacity-45 pointer-events-none" />
-      <img src="/awscc/awscc_cloud.png" alt="" className="absolute bottom-6 right-6 w-40 opacity-55 pointer-events-none" />
-      <img src="/awscc/awscc_cloud.png" alt="" className="absolute top-1/2 right-2 w-32 opacity-25 pointer-events-none" />
 
       {/* Panpan mascots */}
       <img src="/awscc/panpan1.png" width={180} height={180} className="icon absolute right-[45%] top-10" alt="Panpan" />

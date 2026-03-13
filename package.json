@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
+    "@types/three": "^0.183.1",
     "axios": "^1.10.0",
     "html2canvas": "^1.4.1",
     "react": "^19.1.0",
+    "react-clouds": "^1.0.0",
     "react-confetti": "^6.4.0",
     "react-dom": "^19.1.0",
     "react-qr-code": "^2.0.18",
@@ -23,7 +27,8 @@
     "react-snowfall": "^2.4.0",
     "react-timer-hook": "^4.0.5",
     "react-toastify": "^11.0.5",
-    "sweetalert2": "^11.22.2"
+    "sweetalert2": "^11.22.2",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
