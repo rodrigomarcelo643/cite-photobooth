@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import PhotoStrip from './PhotoStrip';
-import { createRoot } from 'react-dom/client';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +16,17 @@ function Camera() {
   const [dotCount, setDotCount] = useState(0);
 
   const navigate = useNavigate();
+
+  const canvasToBlob = (canvas, type = 'image/jpeg', quality = 0.9) =>
+    new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          reject(new Error('Failed to create image blob'));
+          return;
+        }
+        resolve(blob);
+      }, type, quality);
+    });
 
   const startVideoStream = () => {
     navigator.mediaDevices
@@ -57,7 +67,6 @@ function Camera() {
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     // Flip horizontally to undo mirrored webcam preview
     context.save();
@@ -106,27 +115,37 @@ function Camera() {
 const handleDone = async () => {
   setIsUploading(true);
 
-  const container = document.getElementById('hidden-photo-frame');
-
-  const canvas = await html2canvas(container, {
-    useCORS: true,
-    backgroundColor: null,
-    scale: 4,
-  });
-
-  const finalImage = canvas.toDataURL('image/png');
-
-  const formData = new FormData();
-  formData.append('file', finalImage);
-  formData.append('upload_preset', 'cite-photobooth');
-
   try {
+    const container = document.getElementById('hidden-photo-frame');
+
+    if (!container) {
+      throw new Error('Photo frame container not found');
+    }
+
+    const renderScale = Math.min(window.devicePixelRatio || 1, 2);
+
+    const canvas = await html2canvas(container, {
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      scale: renderScale,
+      removeContainer: true,
+    });
+
+    const imageBlob = await canvasToBlob(canvas, 'image/jpeg', 0.88);
+
+    const formData = new FormData();
+    formData.append('file', imageBlob, 'photostrip.jpg');
+    formData.append('upload_preset', 'cite-photobooth');
+
     const res = await axios.post(
       'https://api.cloudinary.com/v1_1/df3nxocat/image/upload',
       formData
     );
 
-    const imageUrl = res.data.secure_url.replace('/upload/', '/upload/fl_attachment:photostrip/');
+    const imageUrl = res.data.secure_url.replace(
+      '/upload/',
+      '/upload/q_auto,f_auto/fl_attachment:photostrip/'
+    );
     navigate('/result', { state: { imageUrl } });
   } catch (err) {
     console.error('Cloudinary Upload Failed', err.response?.data || err.message);
