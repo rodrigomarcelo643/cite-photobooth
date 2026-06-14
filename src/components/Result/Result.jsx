@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import QRCode from 'react-qr-code';
-import './R.css';
+import GrandFreshmenLogo from '../Logo';
+import '../../styles/Result.css';
 
 function Result() {
   const { state } = useLocation();
@@ -13,7 +14,7 @@ function Result() {
   }
 
   return (
-    <div className="result-container relative overflow-hidden">
+    <div className="result-container relative overflow-x-hidden">
 
       {/* Background glow blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -49,32 +50,31 @@ function Result() {
       {/* Left panel: photostrip + back button */}
       <div className="left-panel relative z-10">
         <img src={imageUrl} alt="Photostrip" className="photostrip-image" />
-       
       </div>
 
       {/* Right panel: QR code in safe-zone card */}
-      <div className="flex flex-col justify-center items-center relative z-10">
+      <div className="right-panel flex flex-col justify-center items-center relative z-10">
         <div className=" p-8 flex flex-col items-center">
           <h2 className="scan-text">Scan the QR Code to download</h2>
           <hr className="line" />
           <QRCode value={imageUrl} size={220} className='border border-[#ec6a40] border-4 rounded-lg'/>
 
           <div className="mt-6 flex flex-col items-center gap-3">
-          <img
-            src="/awscc/it_summit_logo.png"
-            height={52}
-            width={200}
-            alt="IT Next Summit Logo"
-            className="mt-4"
-            style={{ filter: 'drop-shadow(0 10px 8px rgba(236, 106, 64, 0.35))' }}
-          />
+            <GrandFreshmenLogo size="md" theme="dark" className="mt-4" />
             <p className="text-2xl font-black text-[#ec6a40] tracking-widest">2026</p>
-          <button className="home-btn" onClick={() => navigate('/')}>
-            <span className="btn-content">
-              <span className="material-symbols-rounded">home</span>
-              <span>Back to Home</span>
-            </span>
-          </button>
+            <button className="try-again-btn" onClick={() => navigate('/camera')}>
+              <span className="btn-content">
+                <span className="material-symbols-rounded">photo_camera</span>
+                <span>Try Again?</span>
+              </span>
+            </button>
+
+            <button className="home-btn" onClick={() => navigate('/')}>
+              <span className="btn-content">
+                <span className="material-symbols-rounded">home</span>
+                <span>Back to Home</span>
+              </span>
+            </button>
             
           </div>
         </div>
@@ -85,4 +85,3 @@ function Result() {
 }
 
 export default Result;
-

@@ -1,5 +1,6 @@
 import React from 'react';
-import './PS.css';
+import GrandFreshmenLogo from '../Logo';
+import '../../styles/PhotoStrip.css';
 
 function PhotoStrip({ photos }) {
   return (
@@ -23,7 +24,7 @@ function PhotoStrip({ photos }) {
 
       {/* Panpan side decorators */}
       <img
-        src="/awscc/panpan1.png"
+        src="/awscc/panpan2.png"
         width={90} height={90}
         alt="Panpan"
         className="absolute top-36 right-[-5px]"
@@ -46,21 +47,14 @@ function PhotoStrip({ photos }) {
       {/* Bottom branding safe-zone */}
       <div className="flex flex-col items-center justify-center gap-2 pb-4 px-4">
          
-        <div className='flex flex-row items-center gap-3 justify-center'>
-          <img src="/awscc/awscc_cloud.png" width={100} height={100} alt="AWSCC"/>
-          <img
-          src="/awscc/it_summit_logo.png"
-          height={52}
-          width={100}
-          alt="IT Next Summit Logo"
-          className="ml-2 z-10"
-        />
+        <div className='flex flex-row items-center gap-2 justify-center'>
+          <img src="/awssbg/aws-sbg-logo-transparent.png" width={50} height={50} alt="AWSSBG"/>
+          <span className="text-[#1a1a3e] font-extrabold text-sm tracking-widest">AWSSBG</span>
         </div>
-        <img src="/awscc/swudevslogowhite.png" width={140} height={32} alt="SWUdevs" className="mt-2" />
+  
       </div>
     </div>
   );
 }
 
 export default PhotoStrip;
-
