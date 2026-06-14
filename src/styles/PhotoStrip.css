@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.frame-container {
-  /* position: relative;
-  overflow: hidden;
-  width: 300px;
-  background-color: #00A7E1;
-  padding-top: 100px;
-  padding-bottom: 75px;
-  padding-left: 40px;
-  padding-right: 40px;
-  color: white;
-  text-align: center; */
-}
-
 .frame {
   position: relative;
   display: flex;
@@ -23,7 +10,6 @@
 .photo-slot {
   width: 100%;
   min-height: 175px;
-
   aspect-ratio: 16 / 9;
   background-color: #ddd;
   display: flex;
@@ -31,18 +17,6 @@
   justify-content: center;
   overflow: hidden;
 }
-
-/* .photo-slot.photo-0 {
-  border-radius: 25px;
-}
-
-.photo-slot.photo-1 {
-  border-radius: 25px;
-}
-
-.photo-slot.photo-2 {
-  border-radius: 25px;
-} */
 
 .photo-slot img {
   width: 100%;
@@ -105,13 +79,13 @@
   transform: perspective(500px) rotateX(5deg) rotateY(5deg);
 }
 
-.warning-1{
+.warning-1 {
   position: absolute;
   width: 65px;
   height: 65px;
 }
 
-.warning-2{
+.warning-2 {
   position: absolute;
   width: 90px;
   height: 90px;
@@ -123,14 +97,14 @@
   height: 65px;
 }
 
-.warning-1{ top: 180px; left: -15px; transform: rotate(-20deg); }
-.warning-2{ top: 400px; right: -15px; transform: rotate(-20deg); }
-.sticker-1{ top: 50px; left: 20px; transform: rotate(-20deg); }
-.sticker-2{ top: 40px; right: 20px; transform: rotate(20deg); }
-.sticker-3{ bottom: 60px; right: 15px; transform: rotate(-20deg); }
-.sticker-4{ bottom: 50px; left: 15px; transform: rotate(20deg); }
+.warning-1 { top: 180px; left: -15px; transform: rotate(-20deg); }
+.warning-2 { top: 400px; right: -15px; transform: rotate(-20deg); }
+.sticker-1 { top: 50px; left: 20px; transform: rotate(-20deg); }
+.sticker-2 { top: 40px; right: 20px; transform: rotate(20deg); }
+.sticker-3 { bottom: 60px; right: 15px; transform: rotate(-20deg); }
+.sticker-4 { bottom: 50px; left: 15px; transform: rotate(20deg); }
 
-.cat-1{
+.cat-1 {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -159,6 +133,5 @@
 
 .bg-pattern .line1 { top: 90px; left: -10%; }
 .bg-pattern .line2 { top: 190px; left: -15%; }
-
 .bg-pattern .line3 { bottom: 100px; left: -15%; }
 .bg-pattern .line4 { bottom: -10px; left: -15%; }
