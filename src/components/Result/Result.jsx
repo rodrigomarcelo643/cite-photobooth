@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import QRCode from 'react-qr-code';
-import GrandFreshmenLogo from '../Logo';
+//import GrandFreshmenLogo from '../Logo';
 import '../../styles/Result.css';
 
 function Result() {
@@ -12,6 +12,10 @@ function Result() {
   if (!imageUrl) {
     return <div>Error: No image URL provided.</div>;
   }
+
+  const handlePrint = () => {
+    window.print();
+  };
 
   return (
     <div className="result-container relative overflow-x-hidden">
@@ -36,7 +40,7 @@ function Result() {
       />
 
        <img
-        src="/awscc/panpan1.png"
+        src="/awscc/panpan5.png"
         alt="Panpan"
         className="absolute right-4 top-4 w-36 opacity-90 pointer-events-none drop-shadow-xl"
       />
@@ -57,11 +61,19 @@ function Result() {
         <div className=" p-8 flex flex-col items-center">
           <h2 className="scan-text">Scan the QR Code to download</h2>
           <hr className="line" />
-          <QRCode value={imageUrl} size={220} className='border border-[#ec6a40] border-4 rounded-lg'/>
+          <QRCode value={imageUrl} size={220} className='border-black border-4'/>
 
-          <div className="mt-6 flex flex-col items-center gap-3">
-            <GrandFreshmenLogo size="md" theme="dark" className="mt-4" />
+          <div className="mt-6 flex flex-col items-center gap-3 w-full">
+             <img src="/awssbg/logo_grand_freshmen.png" className=" w-40 h-auto" />
             <p className="text-2xl font-black text-[#ec6a40] tracking-widest">2026</p>
+            
+            <button className="print-btn" onClick={handlePrint}>
+              <span className="btn-content">
+                <span className="material-symbols-rounded">print</span>
+                <span>Print Photo </span>
+              </span>
+            </button>
+
             <button className="try-again-btn" onClick={() => navigate('/camera')}>
               <span className="btn-content">
                 <span className="material-symbols-rounded">photo_camera</span>
