@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="public/awssbg/logo_grand_freshmen.png" width="150" alt="Grand Freshmen Logo" />
   <img src="public/awssbg/aws-sbg-logo-transparent.png" width="150" alt="AWSSBG Logo" />
   <h1>AWSSBG SWU Grand Freshmen Meetup 2026 Photobooth</h1>
   <p>A responsive, modern React-based digital photobooth built for the SWU Grand Freshmen Meetup 2026, powered by AWSSBG SWU.</p>
