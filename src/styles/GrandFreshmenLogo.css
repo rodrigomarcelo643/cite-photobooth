@@ -1,0 +1,198 @@
+/* Logo Styling */
+.grand-freshmen-logo-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Readex Pro', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+/* Sm size uses row layout to fit adjacent content */
+.grand-freshmen-logo-container.sm {
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+}
+
+/* Size Variants Gap */
+.grand-freshmen-logo-container.lg {
+  gap: 16px;
+}
+
+.grand-freshmen-logo-container.md {
+  gap: 12px;
+}
+
+.grand-freshmen-logo-container.sm {
+  gap: 6px;
+}
+
+/* Emblem Wrapper */
+.grand-freshmen-logo-container .logo-emblem-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Emblem SVG */
+.grand-freshmen-logo-container .logo-emblem-svg {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Outer Circle Spin Animation */
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.grand-freshmen-logo-container .emblem-outer-circle {
+  transform-origin: center;
+  animation: spinSlow 25s linear infinite;
+}
+
+/* Emblem Wrapper Sizes */
+.grand-freshmen-logo-container.lg .logo-emblem-wrapper {
+  width: 72px;
+  height: 72px;
+}
+
+.grand-freshmen-logo-container.md .logo-emblem-wrapper {
+  width: 52px;
+  height: 52px;
+}
+
+.grand-freshmen-logo-container.sm .logo-emblem-wrapper {
+  width: 32px;
+  height: 32px;
+}
+
+/* Text Wrapper */
+.grand-freshmen-logo-container .logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* Horizontal alignment for small screens/PhotoStrip */
+.grand-freshmen-logo-container.sm .logo-text-wrapper {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Text Main */
+.grand-freshmen-logo-container .logo-text-main {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Text Main Sizes */
+.grand-freshmen-logo-container.lg .logo-text-main {
+  font-size: 38px;
+}
+
+.grand-freshmen-logo-container.md .logo-text-main {
+  font-size: 24px;
+}
+
+.grand-freshmen-logo-container.sm .logo-text-main {
+  font-size: 12.5px;
+}
+
+/* Text Sub */
+.grand-freshmen-logo-container .logo-text-sub {
+  font-weight: 900;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Text Sub Sizes */
+.grand-freshmen-logo-container.lg .logo-text-sub {
+  font-size: 28px;
+  letter-spacing: 0.3em;
+  margin-top: 6px;
+}
+
+.grand-freshmen-logo-container.md .logo-text-sub {
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  margin-top: 4px;
+}
+
+.grand-freshmen-logo-container.sm .logo-text-sub {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin-top: 1px;
+}
+
+/* Themes: Dark Theme (for light backgrounds) */
+.grand-freshmen-logo-container.dark .logo-emblem-wrapper {
+  color: #ec6a40;
+  filter: drop-shadow(0 4px 10px rgba(236, 106, 64, 0.25));
+}
+
+.grand-freshmen-logo-container.dark .logo-text-main {
+  background-image: linear-gradient(135deg, #c8380e 0%, #ec6a40 100%);
+}
+
+.grand-freshmen-logo-container.dark .logo-text-sub {
+  background-image: linear-gradient(135deg, #ec6a40 0%, #f58e64 100%);
+}
+
+/* Themes: Light Theme (for dark/colored backgrounds like the orange strip) */
+.grand-freshmen-logo-container.light .logo-emblem-wrapper {
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.grand-freshmen-logo-container.light .logo-text-main {
+  background-image: linear-gradient(135deg, #ffffff 40%, #feb994 100%);
+}
+
+.grand-freshmen-logo-container.light .logo-text-sub {
+  background-image: linear-gradient(135deg, #feb994 0%, #ec6a40 100%);
+}
+
+/* Hover Effects & Micro-animations */
+.grand-freshmen-logo-container:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.grand-freshmen-logo-container:hover .logo-emblem-wrapper {
+  transform: scale(1.06);
+  filter: drop-shadow(0 6px 14px rgba(236, 106, 64, 0.35));
+}
+
+.grand-freshmen-logo-container.light:hover .logo-emblem-wrapper {
+  filter: drop-shadow(0 6px 12px rgba(255, 255, 255, 0.35));
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 640px) {
+  .grand-freshmen-logo-container.lg .logo-emblem-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+  .grand-freshmen-logo-container.lg .logo-text-main {
+    font-size: 24px;
+  }
+  .grand-freshmen-logo-container.lg .logo-text-sub {
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+  }
+}

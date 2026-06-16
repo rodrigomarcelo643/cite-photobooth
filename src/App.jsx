@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import WelcomeScreen from './components/WelcomeScreen';
-import Camera from './components/Camera';
-import Result from './components/Result';
+import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
+import Camera from './components/Camera/Camera';
+import Result from './components/Result/Result';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
