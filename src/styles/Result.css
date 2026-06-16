@@ -15,25 +15,36 @@
 }
 
 .photostrip-image {
-  width: 250px;
+  width: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.home-btn {
-  margin-top: 20px;
+/* Base styles shared by all buttons */
+.home-btn, .try-again-btn, .print-btn {
+  margin-top: 0;
   position: relative;
   overflow: hidden;
-  padding: 12px 30px;
-  background-color: #ffffff;
-  color: #ec6a40;
-  border: #ec6a40 solid 2px;
+  padding: 10px 24px;
   border-radius: 25px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   font-family: 'Readex Pro', sans-serif;
   z-index: 1;
   transition: color 0.3s ease, border 0.3s ease;
+  width: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home button (White background, Orange border & text) */
+.home-btn {
+  background-color: #ffffff;
+  color: #ec6a40;
+  border: #ec6a40 solid 2px;
 }
 
 .home-btn::before {
@@ -114,30 +125,22 @@
   letter-spacing: 5px;
 }
 
-.home-btn .btn-content, .try-again-btn .btn-content {
+.home-btn .btn-content, .try-again-btn .btn-content, .print-btn .btn-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  width: 100%;
 }
 
-.try-again-btn {
-  margin-top: 15px;
-  position: relative;
-  overflow: hidden;
-  padding: 12px 30px;
+/* Try Again & Print buttons (Orange background, White text) */
+.try-again-btn, .print-btn {
   background-color: #ec6a40;
   color: #ffffff;
   border: #ec6a40 solid 2px;
-  border-radius: 25px;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Readex Pro', sans-serif;
-  z-index: 1;
-  transition: color 0.3s ease, border 0.3s ease;
 }
 
-.try-again-btn::before {
+.try-again-btn::before, .print-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -150,26 +153,26 @@
   border-radius: 25px;
 }
 
-.try-again-btn:hover::before {
+.try-again-btn:hover::before, .print-btn:hover::before {
   left: 0;
 }
 
-.try-again-btn span {
+.try-again-btn span, .print-btn span {
   position: relative;
   z-index: 2;
   transition: color 0.4s ease;
 }
 
-.try-again-btn:hover span {
+.try-again-btn:hover span, .print-btn:hover span {
   color: #ec6a40;
 }
 
-.try-again-btn:hover {
+.try-again-btn:hover, .print-btn:hover {
   border: #ec6a40 solid 2px;
 }
 
 .material-symbols-rounded {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -191,7 +194,83 @@
   }
 
   .photostrip-image {
-    width: 220px;
+    width: 300px;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .print-btn, .try-again-btn, .home-btn {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media print {
+  /* Hide background elements, decorations, right panel and buttons */
+  .app-cloud-layer,
+  .ToastContainer,
+  .result-container .absolute,
+  .result-container img[alt="Panpan"],
+  .right-panel {
+    display: none !important;
+  }
+
+  /* Reset body and container background/padding/margin */
+  body, html {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .App, .app-content {
+    background: transparent !important;
+    min-height: auto !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .result-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    gap: 0 !important;
+  }
+
+  .left-panel {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .photostrip-image {
+    width: auto !important;
+    max-width: 100% !important;
+    height: 98vh !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid;
+  }
+
+  /* Set page print orientation */
+  @page {
+    size: portrait;
+    margin: 0;
   }
 }
