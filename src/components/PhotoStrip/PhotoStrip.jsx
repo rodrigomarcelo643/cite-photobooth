@@ -5,7 +5,7 @@ import '../../styles/PhotoStrip.css';
 function PhotoStrip({ photos }) {
   return (
     <div
-      className="frame-container w-[300px] overflow-hidden relative"
+      className="frame-container w-[400px] overflow-hidden relative"
       style={{ background: 'linear-gradient(180deg, #ec6a40 0%, #f58e64 55%, #feb994 100%)' }}
     >
 
@@ -48,8 +48,8 @@ function PhotoStrip({ photos }) {
       <div className="flex flex-col items-center justify-center gap-2 pb-4 px-4">
          
         <div className='flex flex-row items-center gap-2 justify-center'>
-          <img src="/awssbg/aws-sbg-logo-transparent.png" width={50} height={50} alt="AWSSBG"/>
-          <span className="text-[#1a1a3e] font-extrabold text-sm tracking-widest">AWSSBG</span>
+            <img src="/awssbg/logo_grand_freshmen.png" className=" w-25 h-auto" />
+             <img src="/awssbg/aws-sbg-logo-transparent.png" className=" w-15 h-auto" />
         </div>
   
       </div>
