@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import '../../styles/WelcomeScreen.css';
-import GrandFreshmenLogo from '../Logo';
+//import GrandFreshmenLogo from '../Logo';
 
 const stripsData = [
   { id: 1, rotation: -4, photos: ['/awscc/panpan1.png', '/awscc/panpan2.png', '/awscc/panpan3.png'] },
@@ -72,10 +72,10 @@ function WelcomeScreen() {
 
       {/* Center content */}
       <div className="flex flex-col justify-center items-center text-center z-10">
-        <GrandFreshmenLogo size="lg" theme="dark" className="mb-6" />
+        <img src="/awssbg/logo_grand_freshmen.png" className=" w-80 h-auto" />
         <p className="text-[#f58e64] text-2xl font-bold tracking-[0.3em]">2026 · PHOTOBOOTH</p>
         
-        <button className="start-btn mt-8" onClick={handleStart}>
+        <button className="start-btn mt-6" onClick={handleStart}>
           <span>START →</span>
         </button>
 
