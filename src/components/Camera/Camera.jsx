@@ -4,7 +4,7 @@ import PhotoStrip from '../PhotoStrip/PhotoStrip';
 import useCameraStream from '../../hooks/useCameraStream';
 import usePhotoCapture from '../../hooks/usePhotoCapture';
 import useCloudinaryUpload from '../../hooks/useCloudinaryUpload';
-import GrandFreshmenLogo from '../Logo';
+//import GrandFreshmenLogo from '../Logo';
 import '../../styles/Camera.css';
 
 function Camera() {
@@ -110,7 +110,7 @@ function Camera() {
       </button>
 
       <div className="flex flex-col items-center -mt-4 justify-center w-full">
-        <GrandFreshmenLogo size="md" theme="dark" className="mb-3" />
+          <img src="/awssbg/logo_grand_freshmen.png" className=" w-30 h-auto" />
         <p className="text-[#f58e64] text-xl text-center mb-6 font-bold tracking-[0.2em]">2026 · PHOTOBOOTH</p>
 
         <div className="preview-section">
